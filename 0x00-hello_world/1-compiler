@@ -1,2 +1,3 @@
 #!/bin/bash
-gcc -c $CFILE | wc -l
+
+gcc -c $CFILE -o $(echo $CFILE | tr -d ".c").o
