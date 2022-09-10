@@ -18,7 +18,7 @@ int main(void)
 		putchar(letter);
 
 		if (letter == 'a')
-			
+	
 			putchar('\n');
 
 	}
