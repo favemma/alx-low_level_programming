@@ -1,15 +1,7 @@
-include <unistd.h>
+i	#ifndef _main_h_
 
-/**
-* main- check the code
-*
-* Return o 0n sucess.
-*/
+	#define _main_h_
 
-	int main (void)
+	int _putchar(char c);
 
-	{
-
-	return (0)
-
-	}
+	#endif
