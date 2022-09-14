@@ -1,5 +1,5 @@
 #include "main.h"
-#include "main.c"
+#include "1-main.c"
 #include "_putchar.c"
 /**
 * print_alphabet - Entry point
