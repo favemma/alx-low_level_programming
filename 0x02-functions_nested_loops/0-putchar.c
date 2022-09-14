@@ -20,7 +20,7 @@ int main(void)
 
 	{
 	
-	_putchar(str[count]);
+		_putchar(str[count]);
 
 	}
 
