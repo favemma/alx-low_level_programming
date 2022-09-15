@@ -15,9 +15,9 @@ void print_most_numbers(void)
 
 	(
 
-		k = 0
+		k = 0;
 
-		l = 0
+		l = 0;
 
 		for (i = 48; i < 63; i++)
 
