@@ -9,22 +9,42 @@
 void print_most_numbers(void)
 {
 
-	int i;
+	int i, j, k, l;
 
-	for (i = 0; i <= 9; i++)
+	for (j = 0; j <= 9; j++)
 
-	{
+	(
 
-		if ((i == 2) || (i == 4))
+		k = 0
 
-			continue;
+		l = 0
 
-		else
+		for (i = 48; i < 63; i++)
 
-			_putchar(i + '0');
+		{
+
+			if (!(i > 57))
+
+				l = i;
+
+			else
+
+			{
+
+				l = i - 10;
+
+				k = 49;
+
+				_putchar(k);
+
+			}
+
+			_putchar(l);
+
+		}
+
+		_putchar('\n');
 
 	}
-
-	_putchar('\n');
 
 }
