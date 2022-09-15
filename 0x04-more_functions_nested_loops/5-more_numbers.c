@@ -13,7 +13,7 @@ void print_most_numbers(void)
 
 	for (j = 0; j <= 9; j++)
 
-	(
+	{
 
 		k = 0;
 
