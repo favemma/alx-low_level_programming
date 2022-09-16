@@ -2,80 +2,32 @@
 
 /**
 * print_number - prints an integer
-* @na: integer to print
+* @n: integer to print
 * Return: nothing
 */
 
-void print_number(int na)
+void print_number(int n)
 {
 
-	unsigned int pc, i, z, nmodul, n;
+	unsigned int k = n;
 
-
-	if (na == 0)
-
-		_putchar('0');
-
-		/* if n is negative we make it positive*/
-
-	if (na < 0)
+	if (n < 0)
 
 	{
 
-		n = -na;
+		n *= -1;
+
+		k = n;
 
 		_putchar('-');
 
 	}
 
-	else
+	k /= 10;
 
-		n = na;
+	if (k != 0)
 
-	if (n < 10 && n > 0)
-
-		_putchar(n + '0');
-
-	while (n >= 10)
-
-	{
-
-		pc = n;
-
-		z = 0;
-
-		nmodul = 0;
-
-		for (i = 0; pc >= 10; i++)
-
-		{
-
-			if (pc / 10 > 0 && pc % 10 == 0)
-
-				z++;
-
-			else
-
-				z = 0;
-
-			pc /= 10;
-
-			nmodul =  (nmodul) ? nmodul * 10 : 10;
-
-		}
-
-		_putchar(pc + '0');
-
-		while (z-- > 0)
-
-			_putchar('0');
-
-		n %= nmodul;
-
-		if (n > 0 && n < 10)
-
-			_putchar(n + '0');
-
-	}
+		print_number(k);
+	_putchar((unsigned int) n % 10 + '0');
 
 }
