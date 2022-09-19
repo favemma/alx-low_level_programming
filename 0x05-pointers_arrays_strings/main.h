@@ -14,6 +14,8 @@ void print_rev(char *s);
 
 void rev_string(char *s);
 
+void puts2(char *str);
+
 int _putchar(char c);
 
 int _isdigit(int c);
