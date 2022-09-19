@@ -18,15 +18,15 @@ void reset_to_98(int *n)
 
 	p = &n;
 
-	printf("Value of 'n': %d\n", n);
+	_putchar("Value of 'n': %d\n", n);
 
-	printf("Address of 'n': %p\n", &n);
+	_putchar("Address of 'n': %p\n", &n);
 
-	printf("Value of 'p': %p\n", p);
+	_putchar("Value of 'p': %p\n", p);
 
-	*p = 402;
+	*p = 98;
 
-	printf("Value of 'n': %d\n", n);
+	_putchar("Value of 'n': %d\n", n);
 
 	return (0);
 
