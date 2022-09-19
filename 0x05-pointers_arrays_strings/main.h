@@ -16,6 +16,8 @@ void rev_string(char *s);
 
 void puts2(char *str);
 
+void puts_half(char *str);
+
 int _putchar(char c);
 
 int _isdigit(int c);
