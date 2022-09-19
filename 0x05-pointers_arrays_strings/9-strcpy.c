@@ -11,19 +11,15 @@
 char *_strcpy(char *dest, char *src)
 {
 
-	int inc = 0;
+	int i = 0;
 
-	while (*(src + inc) != '\0')
+	for (; src[i] != '\0'; i++)
 
 	{
 
-		*(dest + inc) = *(src * inc);
-
-		inc++;
+		dest[i] = src[i];
 
 	}
-
-	*(dest + inc) = '\0';
 
 	return (dest);
 
