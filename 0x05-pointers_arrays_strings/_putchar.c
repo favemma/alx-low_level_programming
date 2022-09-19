@@ -1,11 +1,12 @@
 #include "main.h"
 #include <stdio.h>
-#include <stdlib.h>
 
 /**
-*main- _putchar print result to stdout
+* _putchar - print c to stdout
+*@c : this is the character to print
 *
 *Return: 1 on success
+*on fail -i
 */
 
 int _putchar(char c)
