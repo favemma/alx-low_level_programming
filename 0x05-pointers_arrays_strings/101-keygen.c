@@ -30,9 +30,8 @@ int main(void)
 
 	}
 
-	_putchar(2772 - x)
+	_putchar(2772 - x);
 
 	return (0);
 
 }
-
