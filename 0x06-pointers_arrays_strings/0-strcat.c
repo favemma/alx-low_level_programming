@@ -10,7 +10,9 @@
 char *_strcat(char *dest, char *src)
 {
 
-	_putchar("Concatenated String: %s\n", strcat(*dest,*src));
+	strcat = (*dest,*src);
+
+	printf("Concatenated String: %s\n", *dest);
 
 	return 0;
 
