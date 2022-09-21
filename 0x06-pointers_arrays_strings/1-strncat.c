@@ -3,13 +3,14 @@
 
 
 /**
-* _strcat - a function that concatenates two strings
+* _strncat - a function that concatenates two strings but add imputted byte
 * @dest: copy to
 * @src: copy from
+*@n: integer parameter to compare index to
 * Return: two concat strings
 */
 
-char *_strcat(char *dest, char *src)
+char *_strncat(char *dest, char *src, int n)
 {
 
 	int i = 0, dest_len = 0;
@@ -18,7 +19,7 @@ char *_strcat(char *dest, char *src)
 
 	dest_len++;
 
-	for (i = 0; src[i]; i++)
+	for (i = 0; src[i] && i < n; i++)
 
 		dest[dest_len++] = src[i];
 
