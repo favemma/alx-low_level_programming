@@ -2,91 +2,110 @@
 #include <stdio.h>
 
 /**
-* print_line - prints a s bytes of a buffer
-* @c: buffer to print
-* @s: bytes of buffer to print
-* @l: line of buffer to print
-* Return: void
+* isPrintableASCII - determines if n is a printable ASCII char
+* @n: integer
+* Return: 1 if true, 0 if false
 */
 
-void print_line(char *c, int s, int l)
+int isPrintableASCII(int n)
+{
+	return (n >= 32 && n <= 126);
+}
+/**
+* printHexes - print hex values for string b in formatted form
+* @b: string to print
+* @start: starting position
+* @end: ending position
+*/
+
+void printHexes(char *b, int start, int end)
 {
 
-	int j, k;
+int i = 0;
 
-	for (j = 0; j <= 9; j++)
+	while (i < 10)
 
 	{
 
-		if (j <= s)
+		if (i < end)
 
-			printf("%02x", c[l * 10 + j]);
+			printf("%02x", *(b + start + i));
 
 		else
 
 			printf("  ");
 
-		if (j % 2)
+		if (i % 2)
 
-			putchar(' ');
+			printf(" ");
 
-	}
-
-	for (k = 0; k <= s; k++)
-
-		if (c[l * 10 + k] > 31 && c[l * 10 + k] < 127)
-
-			putchar(c[l * 10 + k]);
-
-		else
-
-			putchar('.');
+		i++;
 
 	}
 
 }
+/**
+* printASCII - print ascii values for string b,
+* formatted to replace nonprintable chars with '.'
+* @b: string to print
+* @start: starting position
+* @end: ending position
+*/
+void printASCII(char *b, int start, int end)
+{
 
+	int ch, i = 0;
+
+	while (i < end)
+
+	{
+
+		ch = *(b + i + start);
+
+		if (!isPrintableASCII(ch))
+
+			ch = 46;
+
+			printf("%c", ch);
+
+		i++;
+
+	}
+
+}
 /**
 * print_buffer - prints a buffer
-* @b: buffer to print
+* @b: string
 * @size: size of buffer
-*
-* Return: void
 */
 
 void print_buffer(char *b, int size)
 {
 
-	int i;
+	int start, end;
 
-	for (i = 0; i <= (size - 1) / 10 && size; i++)
+	if (size > 0)
 
 	{
 
-		printf("%08x: ", i * 10);
-
-		if (i < size / 10)
+		for (start = 0; start < size; start += 10)
 
 		{
 
-		print_line(b, 9, i);
+			end = (size - start < 10) ? size - start : 10;
+
+			printf("%08x: ", start);
+
+			printHexes(b, start, end);
+
+			printASCII(b, start, end);
+
+			printf("\n");
 
 		}
 
-		else
+	} else
 
-		{
-
-		print_line(b, size % 10 - 1, i);
-
-		}
-
-		putchar('\n');
-
-	}
-
-	if (size == 0)
-
-		putchar('\n');
+		printf("\n");
 
 }
