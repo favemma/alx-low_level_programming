@@ -66,7 +66,7 @@ void printASCII(char *b, int start, int end)
 
 			ch = 46;
 
-			printf("%c", ch);
+		printf("%c", ch);
 
 		i++;
 
