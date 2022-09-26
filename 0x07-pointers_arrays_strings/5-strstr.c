@@ -11,27 +11,31 @@ nclude <stdio.h>
 char *_strstr(char *haystack, char *needle)
 {
 
-	for (; *haystack != '\0'; haystack++)
+	char *startn = needle, *starth = haystack;
+
+	while (*haystack)
 
 	{
 
-		char *one = haystack;
+		starth = haystack;
 
-		char *two = needle;
+		needle = startn;
 
-		while (*one == *two && *two != '\0')
+		while (*haystack == *needle)
 
 		{
 
-			one++;
+			haystack++;
 
-			two++;
+			needle++;
 
 		}
 
-		if (*two == '\0')
+	if (*needle == '\0')
 
 		return (haystack);
+
+		haystack = starth + 1;
 
 	}
 
