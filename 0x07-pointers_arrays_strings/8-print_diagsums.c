@@ -2,7 +2,6 @@
 #include "main.h"
 
 /**
-
 * print_diagsums - Entry point
 * @a: input
 * @size: input
@@ -12,16 +11,18 @@
 void print_diagsums(int *a, int size)
 {
 
-	int i, n, total1 = 0, total2 = 0;
+	int i = 0, max = size * size, sum1 = 0, sum2 = 0;
 
-	for (i = 0; i <= (size * size); i = i + size + 1)
+	for (; i < max; i += size + 1)
 
-		total1 = total1 + a[i];
+		sum1 += a[i];
 
-	for (n = size - 1; n <= (size * size) - size; n = n + size - 1)
+	for (i = size - 1; i < max - 1; i += size - 1)
 
-		total2 = total2 + a[n];
+		sum2 += a[i];
 
-		printf("%d, %d\n", total1, total2);
+	printf("%d, %d\n", sum1, sum2);
+
+	}
 
 }
