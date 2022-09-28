@@ -52,7 +52,7 @@ int lengthc(char *s)
 
 int palindrome(char str[], int st, int end)
 {
-	
+
 	if (st >= end)
 
 		return (1);

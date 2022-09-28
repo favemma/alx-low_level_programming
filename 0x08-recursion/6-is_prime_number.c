@@ -32,7 +32,7 @@ int is_prime_number(int n)
 
 int prime_checker(int n, int i)
 {
-	
+
 	if (i == 1)
 
 		return (1);
