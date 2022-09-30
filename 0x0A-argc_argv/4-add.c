@@ -35,7 +35,7 @@ int num_checker(char *a)
 
 			num = num * 10 + (a[i] - '0');
 
-			i++;
+		i++;
 
 	}
 
