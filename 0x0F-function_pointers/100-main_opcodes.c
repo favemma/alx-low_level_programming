@@ -19,7 +19,7 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		exit(1);
 	}
-		bytes = atoi(argv[1]);
+	bytes = atoi(argv[1]);
 	if (bytes < 0)
 	{
 		printf("Error\n");
@@ -30,7 +30,7 @@ int main(int argc, char *argv[])
 	if (bytes > 0)
 	{
 		while (i < (bytes - 1))
-		printf("%02hhx ", func_ptr[i++]);
+			printf("%02hhx ", func_ptr[i++]);
 		printf("%hhx\n", func_ptr[i]);
 
 	}
