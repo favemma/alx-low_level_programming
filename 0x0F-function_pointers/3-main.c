@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "3-calc.h"
+#include <string.h>
 
 /**
 * main - call functions to print answer
@@ -12,26 +13,20 @@
 int main(int argc, char **argv)
 {
 
-	char aux = argv[2][0];
-	int a = 0, num1 = 0, num2 = 0;
+	int (*func)(int, int);
+
 	if (argc != 4)
 	{
 		printf("Error\n");
 		exit(98);
 	}
-	if (aux != '+' && aux != '-' && aux != '*' && aux != '/' && aux != '%')
+	func = get_op_func(argv[2]);
+	if (func == NULL)
 	{
 		printf("Error\n");
 		exit(99);
 	}
-	if (argv[2][1] != '\0')
-	{
-		printf("Error\n");
-		exit(99);
-	}
-	 num1 = atoi(argv[1]);
-	 num2 = atoi(argv[3]);
-	a = (get_op_func(argv[2]))(num1, num2);
-	printf("%d\n", a);
+
+	printf("%d\n", func(atoi(argv[1]), atoi(argv[3])));
 	return (0);
 }
