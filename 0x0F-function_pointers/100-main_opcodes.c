@@ -11,8 +11,9 @@
 int main(int argc, char *argv[])
 {
 
- 	int bytes, i;
+	int bytes, i;
 	unsigned char *func_ptr;
+
 	if (argc != 2)
 	{
 		printf("Error\n");
