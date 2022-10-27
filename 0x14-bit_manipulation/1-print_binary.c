@@ -7,15 +7,20 @@
 
 void print_binary(unsigned long int n)
 {
-	int i, flag;
+	unsigned long int printbit = 1ul << 63;
+	char c = '0';
 	
-	if(n == 0)
-		_putchar('0');
-	for (flag = 0, i = sizeof(n) * 8 - 1; i >= 0; i--)
+	while (!(printbit & n) && printbit != 0)
+		printbit = printbit >> 1;
+	if (printbit == 0)
+		write(1, &c, 1);
+	while (printbit)
 	{
-		if ((n >> i) & 1)
-			flag = 1;
-			if (flag == 1)
-				((n >> i) & 1) ? _putchar('1') : _putchar('0');
+		if (printbit & n)
+			c = '1';
+		else
+			c = '0';
+		write(1, &c, 1);
+		printbit = printbit >> 1;
 	}
 }
