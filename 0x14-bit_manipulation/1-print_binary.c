@@ -1,4 +1,6 @@
 #include "main.h"
+#include <unistd.h>
+#include <limits.h>
 
 /**
 * print_binary - converts a decimal number to binary
