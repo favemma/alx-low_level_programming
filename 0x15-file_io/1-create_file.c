@@ -1,11 +1,7 @@
-#include <stdio.h>
-#include <unistd.h>
-#include <fcntl.h>
-#include <sys/types.h>
-#include <sys/stat.h>
+#include "main.h"
 
 /**
-* create_file - creates a file and puts text in it
+*create_file and put text in it
 * with 600 perms (do not change if it exists)
 *
 * @filename: name for file
@@ -16,11 +12,26 @@
 
 int create_file(const char *filename, char *text_content)
 {
-	int i, res;
+	int count, len = 0, fd;
 	
-	res = 0;
-	for (i = 8 * sizeof(n) - 1; i >= 0; i--)
-		if (((n ^ m) >> i) & 1)
-			res++;
-	return (res);
+	if (filename == NULL)
+		return (-1);
+	/* Open file and get file descriptor */
+	fd = open(filename, O_CREAT | O_RDWR | O_TRUNC, 0600);
+	if (fd == -1)
+		return (-1);
+	if (text_content != NULL)
+	{
+		while (text_content[len])
+			len++;
+	}
+	/* write into file description */
+	count = write(fd, text_content, len);
+	if (count == -1)
+	{
+		close(fd);
+		return (-1);
+	}
+	close(fd);
+	return (1);
 }
