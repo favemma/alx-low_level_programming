@@ -1,1 +1,4 @@
-VimCrypt~03!5…w2hÕ`§cÿ°ðy_P¿À?Ë«F]x(t²YÜCi?‚lšG]È%Èô|tb¼	õe»Ø˜T¨@`]vÁ–Éå3zªMBéUåž™qpÍh´êòÇŽ@Î<šæ	…<Il„%–ëÅ¥~/À†Œ ‡¯n¶L’Ãð¿Ê	§±O‡ÏA#©Sz¯ƒÊ5L
+#!/bin/bash
+gcc -Wall -Wextra -Werror -pedantic -c -fPIC *.c
+gcc -shared -o liball.so *.o
+export LD_LIBRARY_PATH=.:$LD_LIBRARY_PATH
